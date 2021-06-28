@@ -1,0 +1,119 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$kubernetes\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character"""
+
+[battery]
+disabled = true
+
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = true
+
+[directory]
+truncation_length = 0
+truncation_symbol = '…/'
+
+[dotnet]
+disabled = true
+
+[gcloud]
+format = 'on [$symbol$active (\($project 🌍$region\))]($style) '
+
+[git_branch]
+style = 'cyan'
+
+[git_status]
+style = 'bright-white'
+ahead = '[⬆${count}](green)'
+behind = '[⬇${count}](red)'
+conflicted = '⚡️'
+diverged = ' [⬆${ahead_count}](green)[⬇${behind_count}](red)'
+untracked = '?'
+stashed = '📦${count} '
+modified = '!'
+staged = '+'
+renamed = '»'
+deleted = '✘'
+
+[java]
+style = 'purple'
+
+[kubernetes]
+disabled = false
+format = 'on [$symbol$context( \($namespace\))]($style) '
+style = 'cyan'
+
+[nodejs]
+symbol = 'JS '
+
+[package]
+disabled = false
+display_private = true
+
+[time]
+disabled = true
+time_format = '%T%.3f'
+format = '🕙 [$time]($style) '
+style = 'blue'

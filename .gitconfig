@@ -1,0 +1,29 @@
+[alias]
+    addv = add --verbose .
+    ahead = log origin/master..HEAD --oneline
+    amend = commit --amend -C HEAD
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    publish = "!git push -u origin $(git branch-name)"
+    review = difftool origin/master...
+    incoming = log ..@{upstream}
+[apply]
+    whitespace = fix
+[core]
+    autocrlf = input
+    editor = nano
+[diff]
+    colorMoved = zebra
+[fetch]
+    prune = true
+[format]
+    pretty = format:%C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(18,trunc)%aN %C(auto,reset)%s%C(auto,red)% gD% D
+[log]
+    date = relative
+[pull]
+    ff = only
+    rebase = true
+[tag]
+    sort = -version:refname
+[include]
+    path = ~/.gitconfig-lfs
+    path = ~/.gitconfig-local

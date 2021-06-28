@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+if [[ $# -eq 0 ]]; then
+    cat <<EOF
+Usage: $(basename "$0") FILE...
+For each FILE argument create empty file if it does not exist, creating
+intermediate directories as needed.
+EOF
+    exit 2
+fi
+
+for f in "$@"; do
+    mkdir -pv "$(dirname "$f")"
+    touch "$f" && echo "touch: created '$f'"
+done
