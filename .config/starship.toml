@@ -79,6 +79,7 @@ truncation_symbol = '…/'
 disabled = true
 
 [gcloud]
+symbol = "☁️ "
 format = 'on [$symbol$active (\($project 🌍$region\))]($style) '
 
 [git_branch]
