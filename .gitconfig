@@ -22,6 +22,8 @@
 [pull]
     ff = only
     rebase = true
+[rebase]
+    autosquash = true
 [tag]
     sort = -version:refname
 [include]
