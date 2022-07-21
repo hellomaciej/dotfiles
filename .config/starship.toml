@@ -113,6 +113,16 @@ symbol = 'JS '
 disabled = false
 display_private = true
 
+[status]
+disabled = false
+style = 'bold red'
+format = '[$symbol(SIG$signal_name $signal_number )(✖$int)]($style) '
+recognize_signal_code = true
+map_symbol = true
+symbol = ''
+sigint_symbol = '⚡ '
+signal_symbol = '⚡ '
+
 [time]
 disabled = true
 time_format = '%T%.3f'
