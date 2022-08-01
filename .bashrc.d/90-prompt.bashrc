@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 
+# for Windows Terminal to split/duplicate tab to same directory
+# https://docs.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+if [ -x /usr/bin/wslpath ]; then
+    PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(/usr/bin/wslpath -w "$PWD")"'
+fi
+
 # If starship available - use it and return
 if [ -x "${HOME}/.local/bin/starship" ]; then
     function set_term_title() {
